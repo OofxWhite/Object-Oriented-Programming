@@ -41,6 +41,7 @@ public class Calculator {
     }
 }
 ```
+---
 
 ### Constructors:
 
@@ -49,7 +50,7 @@ Constructors are special methods in a class used to initialize objects in said c
 - called automatically when the keyword `new` is used.
 
 #### Initializing Constructors:
--Constructors must hold the same name as the class its in.
+- Constructors must hold the same name as the class its in.
 ```java
 public class constructor{
     constructor()
