@@ -59,7 +59,8 @@ Constructors are special methods in a class used to initialize objects in said c
    ```
 
 2. **Parameterized Constructors:**
-   - Parameterized constructors allow you to pass values during object creation to initialize the object's fields. They take parameters that correspond to the fields' values and set them accordingly.
+   - Parameterized constructors allow you to pass values during object creation to initialize the object's fields. 
+     - They take parameters that correspond to the fields' values and set them accordingly.
 
    ```java
    public class Person {
@@ -75,7 +76,8 @@ Constructors are special methods in a class used to initialize objects in said c
    ```
 
 3. **Overloading Constructors:**
-   - Like other methods, constructors can be overloaded. This means you can define **multiple** constructors in a class with different parameter lists. Java will choose the appropriate constructor based on the arguments you provide during object creation.
+   - Like other methods, constructors can be overloaded. This means you can define **multiple** constructors in a class with different parameter lists. 
+     - Java will choose the appropriate constructor based on the arguments you provide during object creation.
 
    ```java
    public class Rectangle {
@@ -96,7 +98,7 @@ Constructors are special methods in a class used to initialize objects in said c
    ```
 
 4. **Initializing Code Blocks:**  
-   - In addition to constructor parameters, you can also include code blocks within constructors to perform additional initialization tasks. These code blocks are executed before the constructor body.
+   - In addition to constructor parameters, you can also include code blocks within constructors to perform additional initialization tasks.
 
    ```java
    public class Student {
@@ -116,7 +118,8 @@ Constructors are special methods in a class used to initialize objects in said c
    ```
 
 5. **Chaining Constructors (Constructor Overloading):**  
-  -  Constructors can <mark>call other constructors within the same class</mark> using the `this()` keyword. This technique is called constructor chaining and allows you to reuse initialization code.
+  -  Constructors can <mark>call other constructors within the same class </mark>  using the `this()` keyword. 
+     -  This technique is called constructor chaining and allows you to reuse initialization code.
 
    ```java
    public class Car {
@@ -133,3 +136,99 @@ Constructors are special methods in a class used to initialize objects in said c
        }
    }
    ```
+   ---
+
+   ## Methods:
+   **Definition:**
+   - Methods are blocks of code that performs tasks and can be invoked from other parts of the program.
+
+### 1. Declaration: 
+General form:
+return-type name(parameters){ }
+
+- Return type indicates the type of vlaue returned by the method.
+  - no value will be returned if the return type is `void`.
+  
+  Example:
+```java
+  public int add(int a, int b) {
+    int sum = a + b;
+    return sum;
+}
+
+public void printMessage(String message) {
+    System.out.println(message);
+}
+```
+
+### 2. Invocation:
+- Methods are invoked by their name().
+    - parameters of the methods go as arguments in the ().
+  
+### 3. Parameters and Arguments:
+- Parameters are **variables** declared in the method signature that accepts values to the method.
+- Arguments are the **actual values** that are given when invoking the method.
+ 
+ ```java
+ // Method declaration with parameters
+public void greet(String name) {
+    System.out.println("Hello, " + name + "!");
+}
+
+// Method invocation with an argument
+greet("Glokk"); // The string "Glokk" is the argument.
+ ```
+
+### 4. Overloading:
+- Multiple methods can be defined with the same name but diff parameters.
+- Java determiines the best fit method to be called based on the paramters and arguments used in invocation.
+
+### 5. Access Modifiers:
+- Used to restric scope of a class,method etc.
+
+#### 4 types of Access modifiers:
+##### 1. Default:
+- when no access modifier is specified it has the default access modifier.
+  - This allowes access anywhwere within the same package.
+Example:
+```java
+// Java program to illustrate default modifier
+package p1;
+
+// Class Geek is having Default access modifier
+class Geek
+{
+	void display()
+	{
+		System.out.println("Hello World!");
+	}
+}
+```
+##### 2. Private:
+- Methods or data declared private are only accesible within the class in which theyre declared.
+  - Top level classes cant be declared private as
+    - private means only visible within the enclosing class.
+  
+##### 3. Protected:
+- Methods and data are only accesible within the same package or subclasses in diff packages.
+- Keyword: Protected
+
+###### Access within the Same Class:
+- A protected member can be accessed directly within the class it belongs to, just like any other member with public or private access.
+
+###### Access within Subclasses:
+- A protected member can be accessed by subclasses (classes that inherit from the class containing the protected member), regardless of whether the subclasses are in the same package or different packages.
+
+###### Access in the Same Package:
+- A protected member can also be accessed by any class within the same package, regardless of whether the accessing class is a subclass.
+
+###### Access in Different Packages:
+- If a subclass is in a different package, it can still access the protected members of its superclass. 
+- Other classes in different packages cannot access protected members unless they are subclasses of the class containing the protected member.
+
+##### 4. Public:
+Keyword: Public
+- Classes Methods data are accessible from anywhere in the program without restrictions.
+
+
+
